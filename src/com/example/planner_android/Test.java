@@ -1,31 +1,23 @@
 package com.example.planner_android;
 
 import android.app.Activity;
+import android.app.ActionBar;
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.os.Build;
 
-public class DisplayMessageActivity extends Activity {
+public class Test extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		Intent intent = getIntent();
-		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-		
-		TextView textView = new TextView(this);
-		textView.setTextSize(40);
-		textView.setText(message);
-		
-		setContentView(R.layout.activity_display_message);
-		
+		setContentView(R.layout.activity_test);
+
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
@@ -36,7 +28,7 @@ public class DisplayMessageActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.display_message, menu);
+		getMenuInflater().inflate(R.menu.test, menu);
 		return true;
 	}
 
@@ -63,8 +55,8 @@ public class DisplayMessageActivity extends Activity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_display_message,
-					container, false);
+			View rootView = inflater.inflate(R.layout.fragment_test, container,
+					false);
 			return rootView;
 		}
 	}
